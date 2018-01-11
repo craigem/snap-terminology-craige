@@ -1,0 +1,80 @@
+name: terminology-craige
+version: '1.1.1'
+summary: An EFL terminal emulator with some extra bells and whistles.
+description: |
+  This is an EFL terminal emulator with some extra bells and whistles.
+
+grade: devel
+confinement: devmode
+
+apps:
+  terminology:
+    command: terminology
+
+parts:
+  terminology:
+    plugin: autotools
+    source: https://git.enlightenment.org/apps/terminology.git
+    source-type: git
+    source-tag: v1.1.1
+    after:
+      - efl
+  efl:
+    plugin: autotools
+    source: https://git.enlightenment.org/core/efl.git
+    source-type: git
+    source-tag: v1.20.6
+    build-packages: [ libbullet-dev
+                    , libpng-dev
+                    , libjpeg-dev
+                    , libgstreamer1.0-dev
+                    , libgstreamer-plugins-base1.0-dev
+                    , zlib1g-dev
+                    , libluajit-5.1-dev
+                    , libtiff5-dev
+                    , libssl-dev
+                    , libcurl4-gnutls-dev
+                    , libdbus-1-dev
+                    , libc6-dev
+                    , libfontconfig1-dev
+                    , libfreetype6-dev
+                    , libfribidi-dev
+                    , libpulse-dev
+                    , libsndfile1-dev
+                    , libx11-dev
+                    , libxau-dev
+                    , libxcomposite-dev
+                    , libxdamage-dev
+                    , libxdmcp-dev
+                    , libxext-dev
+                    , libxfixes-dev
+                    , libxinerama-dev
+                    , libxrandr-dev
+                    , libxrender-dev
+                    , libxss-dev
+                    , libxtst-dev
+                    , libxcursor-dev
+                    , libxpa-dev
+                    , libxi-dev
+                    , libgles2-mesa-dev
+                    , libgif-dev
+                    , util-linux
+                    , libmount-dev
+                    , libblkid-dev
+                    , libsystemd-dev
+                    , libudev-dev
+                    , libpoppler-dev
+                    , libpoppler-cpp-dev
+                    , libraw-dev
+                    , libspectre-dev
+                    , librsvg2-dev
+                    , libharfbuzz-dev
+                    , libwebp-dev
+                    , libunwind-dev
+                    ]
+    configflags:
+      - --enable-xinput22
+      - --enable-image-loader-webp
+      - --enable-harfbuzz
+      - --enable-multisense
+
