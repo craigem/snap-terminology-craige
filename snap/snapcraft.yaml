@@ -33,7 +33,7 @@ parts:
                     , libluajit-5.1-dev
                     , libtiff5-dev
                     , libssl-dev
-                    , libcurl4-gnutls-dev
+                    , libcurl3
                     , libdbus-1-dev
                     , libc6-dev
                     , libfontconfig1-dev
